@@ -11,8 +11,13 @@ def try_another_city():
         return False
 
 def enter_api():
-    api = input("Enter api: ")
+    api = input("Enter your api key: ")
     return api
+
+def api_error():
+    print("Wrong API")
+    print(" API keys can be generated using https://openweathermap.org/ website ")
+    
 
 api_key = enter_api() 
 flag=True
@@ -25,6 +30,8 @@ while(flag == True):
         response = requests.get(api_url)
         #print(response.status_code)
         #print(type(response.status_code))
+        if response.status_code == 401:
+            api_error()
 
         if response.status_code == 200 :
             print('Connection Successful...')
