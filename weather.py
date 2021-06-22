@@ -46,7 +46,7 @@ while(flag == True):
             
             try :
                 f = open("result.txt", "a+")
-                f.write('date: {}\nlocation: {}\ntemperature: {}\nweather: {}\nhumidity: {}\nwind_speed: {}\n'.format(date,location,temp,weather,humidity,wind_speed))
+                f.write('date: {}\nlocation: {}\ntemperature: {}\nweather: {}\nhumidity: {}\nwind_speed: {}\n\n'.format(date,location,temp,weather,humidity,wind_speed))
                 print('result.txt file contains the output\n')
                 f.close()
                 flag = try_another_city()
